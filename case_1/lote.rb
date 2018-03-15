@@ -27,6 +27,7 @@ class Lote
         end
         
         processar_eventos_do_lote
+        
     end
 
     def processar_eventos_do_lote
@@ -43,8 +44,7 @@ class Lote
                     acao.finalizar
                 end
             end
-        end
-        
+        end  
     end
 
     def status

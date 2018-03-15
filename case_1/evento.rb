@@ -5,20 +5,13 @@ class Evento
 
     include Celluloid
     
-    @acoes = []
+    attr_accessor :acoes, :nome_evento
 
     def initialize(nome_evento)
         @nome_evento = nome_evento
+        @acoes = []
     end
-
-    def nome_evento
-        @nome_evento
-    end
-
-    def acoes
-        @acoes
-    end
-
+    
     def criar_acoes(actor_lote)
         @actor_lote = actor_lote
 

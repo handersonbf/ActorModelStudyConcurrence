@@ -4,22 +4,20 @@ class AcaoEvento
 
     include Celluloid
 
+    attr_accessor :nome_evento
+
     def initialize(nome_evento)
         @nome_evento = nome_evento
         @mutex = Mutex.new
     end
 
-    def nome_evento
-        @nome_evento
-    end
-
     def iniciar
-        p "LOCKANDO: #{@nome_evento} Started At #{Time.now}"
+        p "LOCKANDO: #{@nome_evento}"
         @mutex.lock
     end
 
     def finalizar
-        p "DESALOCKANDO:  #{@nome_evento} END #{Time.now}"
+        p "DESALOCKANDO: #{@nome_evento}"
         @mutex.unlock
         rescue ThreadError
     end
